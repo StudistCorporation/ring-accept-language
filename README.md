@@ -14,9 +14,3 @@ Add a middleware after adding dependencies.
   [handler]
   (wrap-accept-language handler))
 ```
-
-## License
-
-Copyright © 2019 Studist Corporation
-
-Distributed under the MIT License, the same as Ring.

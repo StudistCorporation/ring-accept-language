@@ -1,6 +1,6 @@
 (defproject jp.studist/ring-accept-language "0.1.0-SNAPSHOT"
   :description "Ring-Accept-language provides a middleware that parses the Accept-language request header and injects the value into the request hash."
-  :url "https://github.com/StudistCorporation/ring-accept-language"
+  :url "http://example.com/FIXME"
   :license {:name "The MIT License"
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.10.0"]]
