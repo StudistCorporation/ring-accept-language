@@ -1,5 +1,4 @@
 # Ring Accept-language
-====
 
 ## Overview
 
