@@ -1,13 +1,15 @@
-# Ring-Accept
+# Ring Accept-language
 
-A Clojure library designed to ... well, that part is up to you.
+## Overview
+
+Ring-Accept-language provides a middleware that parses the Accept-language request header and injects the value into the request hash.
 
 ## Usage
 
-FIXME
+Add a middleware after adding dependencies.
 
-## License
-
-Copyright © 2014 James Reeves
-
-Distributed under the MIT License, the same as Ring.
+```Clojure
+(defn some-middleware
+  [handler]
+  (wrap-accept-language handler))
+```

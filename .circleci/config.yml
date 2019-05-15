@@ -1,0 +1,40 @@
+version: 2.1
+
+executors:
+  tester:
+    docker:
+      - image: clojure:lein-alpine
+
+commands:
+  restore_m2_cache:
+    steps:
+      - restore_cache:
+          name: m2
+          key: home-m2-{{ checksum "project.clj" }}
+  save_m2_cache:
+    steps:
+      - save_cache:
+          name: m2
+          key: home-m2-{{ checksum "project.clj" }}
+          paths:
+            - ~/.m2
+
+jobs:
+  test:
+    executor: tester
+    steps:
+      - checkout
+      - restore_m2_cache
+      - run:
+          name: Lint codes
+          command: lein eastwood
+      - run:
+          name: Run tests
+          command: lein test
+      - save_m2_cache
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
