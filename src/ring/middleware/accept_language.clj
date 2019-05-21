@@ -38,7 +38,8 @@
   (if-let [header (get-in request [:headers "accept-language"])]
     (let [values (parse-header header)
           accept (into {} (map parse-accept values))]
-      (assoc request :accept-language accept))))
+      (assoc request :accept-language accept))
+    request))
 
 (defn wrap-accept-language [handler]
   (comp handler accept-language-request))
