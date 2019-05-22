@@ -1,4 +1,4 @@
-(defproject jp.studist/ring-accept-language "0.1.0"
+(defproject jp.studist/ring-accept-language "0.1.1"
   :description "Ring-Accept-language provides a middleware that parses the Accept-language request header and injects the value into the request hash."
   :url "https://github.com/StudistCorporation/ring-accept-language"
   :license {:name "The MIT License"
