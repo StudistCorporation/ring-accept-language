@@ -22,8 +22,10 @@
                                                "ja")))]
       (is (= result {"ja" 1.0}))))
   (testing "No accept-language"
-    (let [result (:accept-language (al/accept-language-request
-                                     {:headers {"host" "localhost"}}))]
+    (let [request {:headers {"host" "localhost"}}
+          returned-request (al/accept-language-request request)
+          result (:accept-language returned-request)]
+      (is (= request returned-request))
       (is (= result nil))))
   (testing "No requests"
     (let [result (:accept-language (al/accept-language-request {}))]
